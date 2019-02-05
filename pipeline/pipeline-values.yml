@@ -3,9 +3,9 @@ project:
   build:
     docker:
       - dockerfile: Dockerfile
-      image_name: huh
+        image_name: huh
       - dockerfile: Dockerfile
-      image_name: bluh
+        image_name: bluh
   deploy:
     jobs:
       fake:
