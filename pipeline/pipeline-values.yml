@@ -1,1 +1,23 @@
-This is a pipeline yml
+project:
+  name: dasdas
+  build:
+    docker:
+      - dockerfile: Dockerfile
+      image_name: huh
+      - dockerfile: Dockerfile
+      image_name: bluh
+  deploy:
+    jobs:
+      fake:
+        ha: ha
+        env_vars:
+          SERVICE_NAME: replace-this
+      fake2:
+        some-junk: d
+      fake25:
+        a: ha
+        env_vars:
+          SERVICE_NAME: replace-this
+      fake3:
+        env-vars:
+          somejunk: morejunk
