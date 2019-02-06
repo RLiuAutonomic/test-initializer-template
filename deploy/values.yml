@@ -1,0 +1,22 @@
+deployment:
+  test-initializer-template:
+    types:
+      - spring
+    replicaCount: 1
+    image:
+      repository: au/test-initializer-template
+      tag: "{{ $.Values.image.tag }}"
+    springCloud:
+      boot2: true
+      reloadStrategy: refresh
+      configMaps:
+        - spring
+    resources:
+      limits:
+        cpu: 2
+        memory: 1Gi
+      requests:
+        cpu: 500m
+        memory: 1Gi
+    java:
+      jvmOpts: "-Xms512M -Xmx512M -XX:+UseG1GC"
